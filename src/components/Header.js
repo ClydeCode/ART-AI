@@ -13,7 +13,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import DeviceHubIcon from '@mui/icons-material/DeviceHub';
 
-const pages = ['Gallery', 'About'];
+const pages = ['Prompt', 'Gallery', 'About'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 export default function Header() {
@@ -95,7 +95,6 @@ export default function Header() {
                         variant="h5" 
                         fontFamily="Montserrat"
                         sx={{
-                            mr: 2,
                             display: { xs: 'flex', md: 'none' },
                             flexGrow: 1,
                             cursor: 'default',
