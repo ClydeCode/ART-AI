@@ -9,7 +9,6 @@ export default function HomePage() {
             <Container maxWidth='lg'>
                 <Stack 
                     sx={{ 
-                        mt: 10, 
                         alignItems: { xs: 'center', md: 'start' },
                         gap: { xs: '30px', md: '25px' },
                         flexDirection: { xs: 'column', md: 'row'}
