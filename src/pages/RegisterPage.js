@@ -8,6 +8,9 @@ export default function RegisterPage() {
             <Header />
             <Container 
                 maxWidth='sm'
+                sx={{
+                    padding: '0 1rem 2rem 1rem'
+                }}
             >
                 <Paper elevation={1}>
                     <Box padding={10}>
