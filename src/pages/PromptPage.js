@@ -8,8 +8,7 @@ export default function PromptPage() {
             <Container 
                 maxWidth='sm' 
                 sx={{ 
-                    mt: 5,
-                    padding: 5
+                    padding: '0 2rem 2rem 2rem'
                 }}
             >
                 <Stack gap={5}>
