@@ -23,8 +23,8 @@ export default function PromptPage() {
                     >
                         <Paper elevation={1} sx={{ height: '100%' }}/>
                     </Box>
-                    <TextField id='positive-prompt' label='Positive' variant='outlined' multiline rows={5} />
-                    <TextField id='negative-prompt' label='Negative' variant='outlined' multiline rows={5} />
+                    <TextField id='positive-prompt' label='Positive' variant='outlined' color='secondary' multiline rows={5} />
+                    <TextField id='negative-prompt' label='Negative' variant='outlined' color='secondary' multiline rows={5} />
                     <Button 
                         variant='contained' 
                         color='secondary' 
