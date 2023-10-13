@@ -111,15 +111,16 @@ export default function Header() {
                         {pages.map((page) => (
                         <Button
                             key={page}
+                            href={'/' + page}
                             onClick={handleCloseNavMenu}
                             sx={{ my: 2, display: 'block' }}
-                            color="inherit"
+                            color='inherit'
                         >
                             {page}
                         </Button>
                         ))}
                     </Box>
-                    <Button color="inherit">Login</Button>
+                    <Button color='inherit' href='/Login'>Login</Button>
                     {/* <Box sx={{ flexGrow: 0 }}>
                         <Tooltip title="Open settings">
                             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
