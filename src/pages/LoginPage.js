@@ -8,9 +8,6 @@ export default function LoginPage() {
             <Header />
             <Container 
                 maxWidth='sm'
-                sx={{
-                    mt: 10
-                }}
             >
                 <Paper elevation={1}>
                     <Box padding={10}>
@@ -31,8 +28,16 @@ export default function LoginPage() {
                             </Box>
                             <TextField id='username-field' label='Username' variant='outlined' color='primary'/>
                             <TextField id='password-field' label='Password' variant='outlined' color='primary'/>
-                            <Button variant='contained'>Login</Button>
-                            <Link href='#' underline='hover' alignSelf='center' marginTop={-2}>Register</Link>
+                            <Button 
+                                variant='contained'
+                                sx={{
+                                    height: '45px',
+                                    mt: 2
+                                }}
+                            >
+                                Login
+                            </Button>
+                            <Link href='/register' underline='hover' alignSelf='center' marginTop={-2}>Register</Link>
                         </Stack>
                     </Box>
                 </Paper>
