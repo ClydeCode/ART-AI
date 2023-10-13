@@ -12,6 +12,7 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import DeviceHubIcon from '@mui/icons-material/DeviceHub';
+import { Link } from '@mui/material';
 
 const pages = ['Prompt', 'Gallery', 'About'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -43,22 +44,36 @@ export default function Header() {
                  mb: { xs: '3rem', md: '5rem' }
             }}>
             <Container maxWidth="xl">
-                <Toolbar disableGutters>
-                    <DeviceHubIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
-                    <Typography 
-                        variant="h5" 
-                        fontFamily="Montserrat"
+                <Toolbar 
+                    disableGutters
+                    sx={{
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center'
+                    }}
+                >
+                    <Link
+                        alignItems='center'
+                        color='inherit'
+                        underline='none'
+                        href='/'
                         sx={{
-                            mr: 2,
-                            display: { xs: 'none', md: 'flex' },
-                            cursor: 'default',
-                            userSelect: 'none'
+                            display: {xs: 'none', md: 'flex'}
                         }}
                     >
-                        ART-AI
-                    </Typography>
-
-                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+                        <DeviceHubIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+                        <Typography 
+                            variant="h5" 
+                            fontFamily="Montserrat"
+                            sx={{
+                                // mr: 2,
+                                display: { xs: 'none', md: 'flex' },
+                            }}
+                        >
+                            ART-AI
+                        </Typography>
+                    </Link>
+                    <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
                         <IconButton
                             size="large"
                             aria-label="account of current user"
@@ -89,31 +104,45 @@ export default function Header() {
                             >
                             {pages.map((page) => (
                                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{page}</Typography>
+                                    <Link
+                                        color='inherit'
+                                        underline='none'
+                                        href={'/' + page}
+                                    >
+                                        {page}
+                                    </Link>
                                 </MenuItem>
                             ))}
                         </Menu>
                     </Box>
-                    <DeviceHubIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
-                    <Typography 
-                        variant="h5" 
-                        fontFamily="Montserrat"
-                        sx={{
-                            display: { xs: 'flex', md: 'none' },
-                            flexGrow: 1,
-                            cursor: 'default',
-                            userSelect: 'none'
-                        }}
+                    <Link
+                        display='flex'
+                        color='inherit'
+                        underline='none'
+                        alignItems='center'
+                        href='/'
                     >
-                        ART-AI
-                    </Typography>
-                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+                        <DeviceHubIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+                        <Typography 
+                            variant='h5' 
+                            fontFamily='Montserrat'
+                            sx={{
+                                display: { xs: 'flex', md: 'none' },
+                            }}
+                        >
+                            ART-AI
+                        </Typography>       
+                    </Link>
+                    <Box sx={{ flexGrow: 1, marginLeft: 2, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (
                         <Button
                             key={page}
                             href={'/' + page}
                             onClick={handleCloseNavMenu}
-                            sx={{ my: 2, display: 'block' }}
+                            sx={{ 
+                                my: 2,
+                                display: 'block' 
+                            }}
                             color='inherit'
                         >
                             {page}
