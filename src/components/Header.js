@@ -37,7 +37,11 @@ export default function Header() {
     };
 
     return (
-        <AppBar position="static">
+        <AppBar 
+            position="static"
+            sx={{
+                 mb: { xs: '3rem', md: '5rem' }
+            }}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <DeviceHubIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
