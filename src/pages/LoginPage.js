@@ -28,7 +28,7 @@ export default function LoginPage() {
                 .then((response) => response.data)
                 .then((data) => {
                     const user = {
-                        username: data.username,
+                        username: data.userName,
                         email: data.email,
                         token: data.token
                     }

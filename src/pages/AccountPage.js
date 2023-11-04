@@ -1,13 +1,16 @@
 import { Avatar, Box, Button, Container, Paper, Stack, Tab, Tabs, TextField, Typography } from "@mui/material";
 import Header from "../components/Header";
-import React from "react";
+import React, { useContext } from "react";
+import { UserContext } from "../App";
 
 const pages = ['Account', 'Subscription'];
 
 export default function AccountPage() {
+    const { user, setUser } = useContext(UserContext);
+
     const [value, setValue] = React.useState(0);
 
-    const handleChange = (event, newValue) => {
+    const handleChange = (e, newValue) => {
         setValue(newValue);
     };
 
@@ -46,7 +49,7 @@ export default function AccountPage() {
                                     <TextField 
                                         id='username-field' 
                                         label='Username' 
-                                        defaultValue='rob' 
+                                        defaultValue={user.username}
                                         sx={{ 
                                             width: '350px'
                                         }}
@@ -54,7 +57,7 @@ export default function AccountPage() {
                                     <TextField 
                                         id='email-field' 
                                         label='Email' 
-                                        defaultValue='rob223@gmail.com' 
+                                        defaultValue={user.email}
                                         sx={{ 
                                             width: '350px'
                                         }}
