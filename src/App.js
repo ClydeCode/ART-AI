@@ -1,16 +1,13 @@
 import { createContext, useState } from 'react';
 import RouterSwitch from './RouterSwitch';
-
-export const UserContext = createContext(null);
+import { UserContextProvider } from './contexts/UserContext';
 
 function App() {
-  const [user, setUser] = useState(null);
-
   return (
     <div>
-      <UserContext.Provider value={{ user: user, setUser: setUser }}>
+      <UserContextProvider>
         <RouterSwitch />
-      </UserContext.Provider>
+      </UserContextProvider>
     </div>
   );
 }

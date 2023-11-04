@@ -1,18 +1,22 @@
 import { Avatar, Box, Button, Container, Paper, Stack, Tab, Tabs, TextField, Typography } from "@mui/material";
 import Header from "../components/Header";
 import React, { useContext } from "react";
-import { UserContext } from "../App";
+import { UserContext } from '../contexts/UserContext';
+import { Navigate } from "react-router";
 
 const pages = ['Account', 'Subscription'];
 
 export default function AccountPage() {
-    const { user, setUser } = useContext(UserContext);
+    const { user } = useContext(UserContext);
 
     const [value, setValue] = React.useState(0);
 
     const handleChange = (e, newValue) => {
         setValue(newValue);
     };
+
+    if (!user) 
+        return <Navigate to='/login' />
 
     return (
         <div>

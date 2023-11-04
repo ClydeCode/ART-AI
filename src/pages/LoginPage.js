@@ -3,13 +3,13 @@ import DeviceHubIcon from '@mui/icons-material/DeviceHub';
 import Header from '../components/Header';
 import { AuthRequest } from '../api/UserAPI';
 import { useContext, useState } from 'react';
-import { UserContext } from '../App';
 import { useNavigate } from 'react-router';
+import { UserContext } from '../contexts/UserContext';
 
 export default function LoginPage() {
     const navigate = useNavigate();
 
-    const { user, setUser } = useContext(UserContext);
+    const { SetUser, ClearUser } = useContext(UserContext);
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -27,13 +27,9 @@ export default function LoginPage() {
             await AuthRequest(username, password)
                 .then((response) => response.data)
                 .then((data) => {
-                    const user = {
-                        username: data.userName,
-                        email: data.email,
-                        token: data.token
-                    }
+                    const { userName, email, token } = data;
 
-                    setUser(user);
+                    SetUser(userName, email, token);
 
                     navigate('/account');
                 });
