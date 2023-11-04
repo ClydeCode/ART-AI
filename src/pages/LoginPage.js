@@ -4,8 +4,11 @@ import Header from '../components/Header';
 import { AuthRequest } from '../api/UserAPI';
 import { useContext, useState } from 'react';
 import { UserContext } from '../App';
+import { useNavigate } from 'react-router';
 
 export default function LoginPage() {
+    const navigate = useNavigate();
+
     const { user, setUser } = useContext(UserContext);
 
     const [username, setUsername] = useState('');
@@ -31,6 +34,8 @@ export default function LoginPage() {
                     }
 
                     setUser(user);
+
+                    navigate('/account');
                 });
         }
         catch (e) {
