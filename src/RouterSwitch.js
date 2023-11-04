@@ -3,6 +3,7 @@ import HomePage from './pages/HomePage';
 import PromptPage from './pages/PromptPage';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
+import AccountPage from './pages/AccountPage';
 
 export default function RouterSwitch() {
     return (
@@ -12,6 +13,7 @@ export default function RouterSwitch() {
                 <Route path='/prompt' element= { <PromptPage /> } />
                 <Route path='/login' element= { <LoginPage /> } />
                 <Route path='/register' element= { <RegisterPage /> } />
+                <Route path='/account' element= { <AccountPage /> } />
             </Routes>
         </BrowserRouter>
     );
