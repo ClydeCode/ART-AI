@@ -1,8 +1,43 @@
-import { Box, Button, Container, Link, Paper, Stack, TextField, Typography } from "@mui/material";
+import { Box, Button, Container, Link, Paper, Stack, TextField, Typography } from '@mui/material';
 import DeviceHubIcon from '@mui/icons-material/DeviceHub';
-import Header from "../components/Header";
+import Header from '../components/Header';
+import { AuthRequest } from '../api/UserAPI';
+import { useContext, useState } from 'react';
+import { UserContext } from '../App';
 
 export default function LoginPage() {
+    const { user, setUser } = useContext(UserContext);
+
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+
+    function handleUsernameChange(e) {
+        setUsername(e.target.value);
+    }
+
+    function handlePasswordChange(e) {
+        setPassword(e.target.value);
+    }
+
+    async function handleClick() {
+        try {
+            await AuthRequest(username, password)
+                .then((response) => response.data)
+                .then((data) => {
+                    const user = {
+                        username: data.username,
+                        email: data.email,
+                        token: data.token
+                    }
+
+                    setUser(user);
+                });
+        }
+        catch (e) {
+            console.log(e);
+        }
+    }
+
     return (
         <div>
             <Header />
@@ -26,14 +61,15 @@ export default function LoginPage() {
                                     ART-AI
                                 </Typography>
                             </Box>
-                            <TextField id='username-field' label='Username' variant='outlined' color='primary'/>
-                            <TextField id='password-field' label='Password' variant='outlined' color='primary'/>
+                            <TextField id='username-field' label='Username' variant='outlined' color='primary' onChange={handleUsernameChange}/>
+                            <TextField id='password-field' label='Password' variant='outlined' color='primary' onChange={handlePasswordChange}/>
                             <Button 
                                 variant='contained'
                                 sx={{
                                     height: '45px',
                                     mt: 2
                                 }}
+                                onClick={handleClick}
                             >
                                 Login
                             </Button>
