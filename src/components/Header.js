@@ -182,10 +182,10 @@ export default function Header() {
                                     color='inherit'
                                     >
                                         <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                                        <Typography textAlign="center">
-                                            {setting}
-                                        </Typography>
-                                    </MenuItem>
+                                            <Typography textAlign="center">
+                                                {setting}
+                                            </Typography>
+                                        </MenuItem>
                                     </Link>
                                 ))}
                             </Menu>
