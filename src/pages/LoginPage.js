@@ -10,7 +10,7 @@ import { UserContext } from '../contexts/UserContext';
 export default function LoginPage() {
     const navigate = useNavigate();
 
-    const { user, SetUser, ClearUser } = useContext(UserContext);
+    const { user, SetUser } = useContext(UserContext);
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
