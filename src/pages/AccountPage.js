@@ -15,8 +15,7 @@ export default function AccountPage() {
         setValue(newValue);
     };
 
-    if (!user) 
-        return <Navigate to='/login' />
+    if (!user) return <Navigate to='/login' />
 
     return (
         <div>
