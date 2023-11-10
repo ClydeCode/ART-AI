@@ -3,13 +3,14 @@ import DeviceHubIcon from '@mui/icons-material/DeviceHub';
 import Header from '../components/Header';
 import { AuthRequest } from '../api/UserAPI';
 import { useContext, useState } from 'react';
-import { useNavigate } from 'react-router';
+import { useNavigate, Navigate } from 'react-router';
 import { UserContext } from '../contexts/UserContext';
+
 
 export default function LoginPage() {
     const navigate = useNavigate();
 
-    const { SetUser, ClearUser } = useContext(UserContext);
+    const { user, SetUser, ClearUser } = useContext(UserContext);
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -38,6 +39,8 @@ export default function LoginPage() {
             console.log(e);
         }
     }
+
+    if (user) return <Navigate to='/account' />
 
     return (
         <div>
