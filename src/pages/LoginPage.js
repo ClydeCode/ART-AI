@@ -6,7 +6,6 @@ import { useContext, useState } from 'react';
 import { useNavigate, Navigate } from 'react-router';
 import { UserContext } from '../contexts/UserContext';
 
-
 export default function LoginPage() {
     const navigate = useNavigate();
 
