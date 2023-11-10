@@ -176,17 +176,17 @@ export default function Header() {
                                 onClose={handleCloseUserMenu}
                             >
                                 {settings.map((setting) => (
-                                    <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                                    <Link 
+                                    href={'/' + setting}
+                                    underline='none'
+                                    color='inherit'
+                                    >
+                                        <MenuItem key={setting} onClick={handleCloseUserMenu}>
                                         <Typography textAlign="center">
-                                            <Link 
-                                                href={'/' + setting}
-                                                underline='none'
-                                                color='inherit'
-                                                >
-                                                    {setting}
-                                            </Link>
+                                            {setting}
                                         </Typography>
                                     </MenuItem>
+                                    </Link>
                                 ))}
                             </Menu>
                         </Box>)
