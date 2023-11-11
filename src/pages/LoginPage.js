@@ -30,8 +30,6 @@ export default function LoginPage() {
                     const { userName, email, token } = data;
 
                     SetUser(userName, email, token);
-
-                    navigate('/account');
                 });
         }
         catch (e) {

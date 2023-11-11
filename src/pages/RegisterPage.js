@@ -40,8 +40,6 @@ export default function RegisterPage() {
                     const { userName, email, token } = data;
 
                     SetUser(userName, email, token);
-
-                    navigate('/account');
                 })
         }
         catch (e) {
