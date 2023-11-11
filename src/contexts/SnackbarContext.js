@@ -5,7 +5,8 @@ export const SnackbarContext = createContext();
 
 export const types = {
     0: 'info',
-    1: 'error'
+    1: 'warning',
+    2: 'error',
 }
 
 export const SnackbarProvider = (props) => {

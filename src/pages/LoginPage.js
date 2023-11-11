@@ -37,7 +37,7 @@ export default function LoginPage() {
         catch (e) {
             console.error(e);
 
-            ShowSnackbarAlert('Wrong login details!', types[1]);
+            ShowSnackbarAlert('Wrong login details!', types[2]);
         }
     }
 
