@@ -1,12 +1,15 @@
 import { createContext, useState } from 'react';
 import RouterSwitch from './RouterSwitch';
 import { UserContextProvider } from './contexts/UserContext';
+import { SnackbarProvider } from './contexts/SnackbarContext';
 
 function App() {
   return (
     <div>
       <UserContextProvider>
-        <RouterSwitch />
+        <SnackbarProvider>
+          <RouterSwitch />
+        </SnackbarProvider>
       </UserContextProvider>
     </div>
   );

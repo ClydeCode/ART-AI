@@ -5,11 +5,13 @@ import { AuthRequest } from '../api/UserAPI';
 import { useContext, useState } from 'react';
 import { useNavigate, Navigate } from 'react-router';
 import { UserContext } from '../contexts/UserContext';
+import { SnackbarContext, types } from '../contexts/SnackbarContext';
 
 export default function LoginPage() {
     const navigate = useNavigate();
 
     const { user, SetUser } = useContext(UserContext);
+    const { ShowSnackbarAlert } = useContext(SnackbarContext);
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -30,10 +32,14 @@ export default function LoginPage() {
                     const { userName, email, token } = data;
 
                     SetUser(userName, email, token);
+
+                    ShowSnackbarAlert('Login successful');
                 });
         }
         catch (e) {
             console.error(e);
+
+            ShowSnackbarAlert('Wrong login details!', types[1]);
         }
     }
 
