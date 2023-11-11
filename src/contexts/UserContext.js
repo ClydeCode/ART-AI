@@ -2,20 +2,20 @@ import { createContext, useEffect, useState } from 'react';
 
 export const UserContext = createContext(null);
 
-const GetInitialState = () => {
+function GetInitialState() {
     const data = localStorage.getItem('userContext');
 
     return data ? JSON.parse(data) : null;
 }
 
-export const UserContextProvider = (props) => {
+export function UserContextProvider(props) {
     const [user, setUser] = useState(GetInitialState);
 
     useEffect(() => {
         localStorage.setItem('userContext', JSON.stringify(user));
     }, [user]);
 
-    const SetUser = (username, email, token) => {
+    function SetUser(username, email, token) {
         const user = {
             username,
             email,

@@ -13,7 +13,7 @@ export const SnackbarProvider = (props) => {
     const [message, setMessage] = useState('');
     const [type, setType] = useState('');
     
-    const ShowSnackbarAlert = (message, type = types[0]) => {
+    function ShowSnackbarAlert(message, type = types[0]) {
         setOpen(true);
         setMessage(message);
         setType(type);

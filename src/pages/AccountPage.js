@@ -11,7 +11,7 @@ export default function AccountPage() {
 
     const [value, setValue] = React.useState(0);
 
-    const handleChange = (e, newValue) => {
+    function handleChange (e, newValue) {
         setValue(newValue);
     };
 

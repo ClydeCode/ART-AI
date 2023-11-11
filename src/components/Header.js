@@ -24,19 +24,19 @@ export default function Header() {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
   
-    const handleOpenNavMenu = (e) => {
+    function handleOpenNavMenu(e) {
       setAnchorElNav(e.currentTarget);
     };
 
-    const handleOpenUserMenu = (e) => {
+    function handleOpenUserMenu(e) {
       setAnchorElUser(e.currentTarget);
     };
   
-    const handleCloseNavMenu = () => {
+    function handleCloseNavMenu() {
       setAnchorElNav(null);
     };
   
-    const handleCloseUserMenu = () => {
+    function handleCloseUserMenu() {
       setAnchorElUser(null);
     };
 
