@@ -1,14 +1,12 @@
 import { Box, Button, Container, Link, Paper, Stack, TextField, Typography } from "@mui/material";
 import DeviceHubIcon from '@mui/icons-material/DeviceHub';
 import Header from "../components/Header";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { UserContext } from "../contexts/UserContext";
 import { RegisterRequest } from "../api/UserAPI";
 
 export default function RegisterPage() {
-    const navigate = useNavigate();
-
     const { user, SetUser } = useContext(UserContext);
 
     const [username, setUsername] = useState('');

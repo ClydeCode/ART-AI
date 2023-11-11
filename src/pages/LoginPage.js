@@ -3,13 +3,11 @@ import DeviceHubIcon from '@mui/icons-material/DeviceHub';
 import Header from '../components/Header';
 import { AuthRequest } from '../api/UserAPI';
 import { useContext, useState } from 'react';
-import { useNavigate, Navigate } from 'react-router';
+import { Navigate } from 'react-router';
 import { UserContext } from '../contexts/UserContext';
 import { SnackbarContext, types } from '../contexts/SnackbarContext';
 
 export default function LoginPage() {
-    const navigate = useNavigate();
-
     const { user, SetUser } = useContext(UserContext);
     const { ShowSnackbarAlert } = useContext(SnackbarContext);
 
